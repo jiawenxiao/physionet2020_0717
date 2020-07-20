@@ -19,7 +19,7 @@ def mkdirs(path):
 def calc_auc(y_true, y_pre, threshold=0.5):
     labels = y_true.cpu().detach().numpy().astype(np.int)
     outputs = y_pre.cpu().detach().numpy()   
-    return roc_auc_score(labels, outputs,'macro')
+    return roc_auc_score(labels, outputs,'micro')
     
     
 #打印时间
